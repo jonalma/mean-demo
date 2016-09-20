@@ -4,7 +4,7 @@ var express           = require('express'),
     mongoose          = require('mongoose'),
     meetupsController = require('./server/controllers/meetups-controller');
 
-mongoose.connect('mongodb://10.2.53.134:27017/mean-demo');
+mongoose.connect('mongodb://localhost/mean-demo');
 
 app.use(bodyParser());
 
@@ -19,5 +19,5 @@ app.get('/api/meetups', meetupsController.list);
 app.post('/api/meetups', meetupsController.create);
 
 app.listen(3000, function() {
-  console.log('I\'m Listening...');
+  console.log('I\'m Listening now...');
 })

@@ -1,3 +1,5 @@
+//The variable app is angular.module('meetupApp', ['ngResource'])
+
 app.controller('meetupsController', ['$scope', '$resource', function ($scope, $resource) {
   var Meetup = $resource('/api/meetups');
 
