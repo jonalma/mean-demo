@@ -20,6 +20,7 @@ app.controller('meetupsController', ['$scope', '$resource', function ($scope, $r
   }
   
   // Delete a Meetup
+  // https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular
   $scope.deleteMeetup = function (id, index) {
         var mid = new MeetupID();
         mid.$remove({MeetupID: id}, function () {
