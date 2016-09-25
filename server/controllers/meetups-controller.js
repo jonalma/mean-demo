@@ -23,11 +23,12 @@ module.exports.remove = function(req, res) {
   });
 };
 
+//https://github.com/elvece/crud-meetups/blob/master/server/routes/api.js
 module.exports.updateMeetup = function(req, res) {  
-    console.log(req.params);
+    console.log(req.body.name);
     var id = {_id: req.params.MeetupID};
   
-    Meetup.findOneAndUpdate(id, {name: "Jon"}, function(err, result){
+    Meetup.findOneAndUpdate(id, {name: req.body.name}, function(err, result){
       if (err) throw err;
         res.json(result);
     });

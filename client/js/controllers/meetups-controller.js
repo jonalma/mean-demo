@@ -45,7 +45,8 @@ app.controller('meetupsController', ['$scope', '$resource',
     //http://stackoverflow.com/questions/21339406/angularjs-mongolab-resource-update-error
     $scope.updateMeetup = function(id, index) {
       var mid = new MeetupID();
-
+      mid.name = $scope.meetups[index].name;
+      
       mid.$update({MeetupID: id}, function(result){
         $scope.meetups[index].name = result.name;
       });
