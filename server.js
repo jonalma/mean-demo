@@ -18,6 +18,7 @@ app.use('/js', express.static(__dirname + '/client/js'));
 app.get('/api/meetups', meetupsController.list);
 app.post('/api/meetups', meetupsController.create);
 app.delete('/api/meetups/:MeetupID', meetupsController.remove);
+app.put('/api/meetups/:MeetupID', meetupsController.updateMeetup)
 
 app.listen(3000, function() {
   console.log('I\'m Listening now...');

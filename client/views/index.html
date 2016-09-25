@@ -16,8 +16,15 @@
           <li ng-repeat="meetup in meetups">
             {{meetup.name}}
             <button ng-click="deleteMeetup(meetup._id,$index)">Delete</button>
+            <br>
+            <form ng-submit="updateMeetup(meetup._id,$index)">
+              <input type="text" placeholder="Change meetup name here" ng-model="meetups[$index].name" ></input>
+              <button type="submit">Update Meetup</button>
+            </form>
           </li>
+        <br>
         </ul>
+        
         <form ng-submit="createMeetup()">
           <input type="text" placeholder="Meetup name" ng-model="meetupName"></input>
           <button type="submit">Add</button>
